@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p style="color:red;" th:text="${wrong}">
+<form action="#" th:object="${confirmationCode}" method="post" th:action="@{codeconfirm}">
+
+<table>
+
+<tr>
+<td>Enter the Confirmation Code</td>
+<td><input type="text" th:field="*{code}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('code')})" th:errors="*{code}"></td>
+</tr>
+
+<tr>
+<td><input type="submit"></td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

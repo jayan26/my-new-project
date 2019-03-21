@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p th:text="${name}"></p>
+
+<form action="#" th:object="${personForm}" method="post" th:action="@{/formprocess}">
+
+<table>
+
+<tr>
+<td>Author</td>
+<td><input type="text" th:value="${author}" readonly></td>
+</tr>
+
+<tr>
+<td>firstname</td>
+<td><input type="text" th:field="*{firstname}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('firstname')})" th:errors="*{firstname}"></td>
+</tr>
+
+<tr>
+<td>lastname</td>
+<td><input type="text" th:field="*{lastname}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('lastname')})" th:errors="*{lastname}"></td>
+</tr>
+
+<tr>
+<td>department</td>
+<td><input type="text" th:field="*{department}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('department')})" th:errors="*{department}"></td>
+</tr>
+
+<tr>
+<td>email</td>
+<td><input type="text" th:field="*{email}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('email')})" th:errors="*{email}"></td>
+</tr>
+
+<tr>
+<td>mobile</td>
+<td><input type="text" th:field="*{mobile}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('mobile')})" th:errors="*{mobile}"></td>
+</tr> 
+
+<tr>
+<td>option</td>
+<td><input type="text" th:field="*{option}"></td>
+<td style="color:red;" th:if="(${#fields.hasErrors('option')})" th:errors="*{option}"></td>
+</tr>
+
+<tr>
+<td><input type="submit"></td>
+</tr>
+</table>
+
+</form>
+<a th:href="@{/}">login</a>
+<p Style="color:green;" th:text="${result}">
+
+</body>
+</html>

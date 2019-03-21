@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="Style/LoginValidation.js"></script>
+</head>
+<body>
+
+<form name="registerform" action="#" th:object="${userDetails}" method="post" th:action="@{/registerprocess}">
+<p Style="color:red;" th:text="${passworderror}">
+<table>
+
+<tr>
+<td>user id</td>
+<td><input type="text" th:field="*{userid}"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('userid')})" th:errors="*{userid}"></td>
+</tr>
+
+<tr>
+<td>password</td>
+<td><input type="text" th:field="*{password}" name="pass"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('password')})" th:errors="*{password}"></td>
+</tr>
+
+<tr>
+<td>confirm password</td>
+<td><input type="text" th:field="${passwordConfirmation.confpass}" name="confpass"></td>
+</tr>
+
+<tr>
+<td>first name</td>
+<td><input type="text" th:field="*{userfirstname}"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('userfirstname')})" th:errors="*{userfirstname}"></td>
+</tr>
+
+<tr>
+<td>last name</td>
+<td><input type="text" th:field="*{userlastname}"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('userlastname')})" th:errors="*{userlastname}"></td>
+</tr>
+
+<tr>
+<td>mobile no</td>
+<td><input type="text" th:field="*{usermobile}"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('usermobile')})" th:errors="*{usermobile}"></td>
+</tr>
+
+<tr>
+<td>email</td>
+<td><input type="text" th:field="*{useremail}"></td>
+<td Style="color:red;" th:if="(${#fields.hasErrors('useremail')})" th:errors="*{useremail}"></td>
+</tr>
+
+<tr>
+<td><input type="hidden" th:field="*{usercreatedtime}"></td>
+</tr>
+
+<tr>
+<td><input type="submit" name="registersubmit" value="register" th:onclick="return validate"></td>
+</tr>
+
+</table>
+
+<a th:href="@{/}">login</a>
+
+</form>
+
+</body>
+</html>

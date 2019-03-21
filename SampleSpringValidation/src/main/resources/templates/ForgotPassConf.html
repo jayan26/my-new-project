@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:object="${code}" th:action="@{codeValidation}" method="post">
+<p style="color:red;" th:text="${wrong}"></p>
+<table>
+
+<tr>
+<td>Please enter the code sent to your mail</td>
+</tr>
+
+<tr>
+<td>Enter the code</td>
+<td><input type="text" th:field="*{loginid}"></td>
+</tr>
+
+<tr>
+<td><input type="submit"></td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
