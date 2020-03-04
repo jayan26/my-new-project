@@ -32,7 +32,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583249954471</updated>
+<<<<<<< HEAD
       <workItem from="1583249957232" duration="2608000" />
+=======
+      <workItem from="1583249957232" duration="3117000" />
+>>>>>>> kafka
     </task>
     <servers />
   </component>
