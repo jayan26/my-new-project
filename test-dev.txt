@@ -1,9 +1,17 @@
 dev 1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 kafka 2 in dev
 =======
 kafka 2 in dev
 
 dev 2
+>>>>>>> dev
+=======
+kafka 2 in dev
+
+dev 2
+
+dev 3
 >>>>>>> dev
